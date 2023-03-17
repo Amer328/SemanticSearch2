@@ -39,7 +39,8 @@ if button and (filename or query):
     if 'Update the Database' in options:
         with st.spinner("Updating Database..."):
             corpusData = scrape_text_from_pdf(filename)
-            addData(corpusData,filename)
+            # commented out
+            
             st.success("Database Updated")
     if 'Ask a question' in options:
         with st.spinner("Searching for the answer..."):
