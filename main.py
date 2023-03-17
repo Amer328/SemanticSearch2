@@ -6,7 +6,7 @@ from utils import *
 
 st.set_page_config(layout="wide")
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Semantic Search Engine for Audit Documents and Q&A</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engine for Audit Documents and Q&A</h1>", unsafe_allow_html=True)
 
 st.title("Example Questions")
 st.text("Explain the importance of financial controls")
