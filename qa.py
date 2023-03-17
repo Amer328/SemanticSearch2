@@ -4,7 +4,7 @@ import openai
 
 # Fetch the OpenAI Key from Windows env
 # api_key = os.environ["OPENAI_API_KEY"]
-api_key = st.secrets["OPENAI_API_KEY"]
+api_key = st.secrets["OPENAI_API"]
 
 # Set the OpenAI key
 openai.api_key = api_key
