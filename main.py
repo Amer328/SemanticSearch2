@@ -5,7 +5,9 @@ import qa
 from utils import *
 
 st.set_page_config(layout="wide")
-st.title("Semantic Search Engine for Audit Documents and Q&A")
+
+st.markdown("<h1 style='text-align: center; color: grey;'>Semantic Search Engine for Audit Documents and Q&A</h1>", unsafe_allow_html=True)
+
 st.title("Example Questions")
 st.text("Explain the importance of financial controls")
 st.text("What ethical requirements are auditors are subject to ?")
