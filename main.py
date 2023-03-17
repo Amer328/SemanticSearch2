@@ -4,7 +4,8 @@ from vector_search import *
 import qa
 from utils import *
 
-st.header("Semantic Search Engine for Audit Documents and Q&A")
+st.set_page_config(layout="wide")
+st.title("Semantic Search Engine for Audit Documents and Q&A")
 st.title("Example Questions")
 st.text("Explain the importance of financial controls")
 st.text("What ethical requirements are auditors are subject to ?")
