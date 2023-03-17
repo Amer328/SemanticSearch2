@@ -4,7 +4,6 @@ from vector_search import *
 import qa
 from utils import *
 
-st.set_page_config(layout="wide")
 
 st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engine for Audit Documents and Q&A</h1>", unsafe_allow_html=True)
 
