@@ -1,8 +1,12 @@
 import pinecone
 from sentence_transformers import SentenceTransformer,util
+import streamlit as st
+
 model = SentenceTransformer('all-MiniLM-L6-v2') #384 dimensional
 
-pinecone.init(api_key="1238100d-0003-4a34-83c3-12076b632950", environment="us-east-1-aws") 
+pinecone_api_key = st.secrets["PINECONE_API"]
+
+pinecone.init(api_key=pinecone_api_key, environment="us-east-1-aws") 
 index = pinecone.Index("frs-index1")
 
 
