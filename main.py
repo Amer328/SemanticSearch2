@@ -4,7 +4,15 @@ from vector_search import *
 import qa
 from utils import *
 
-st.header("Semantic Search Engine for Documents and Q&A")
+st.header("Semantic Search Engine for Audit Documents and Q&A")
+st.title("Example Questions")
+st.text("Explain the importance of financial controls")
+st.text("What ethical requirements are auditors are subject to ?")
+st.text("What are the Auditor's Responsibilities for the Audit of the Financial Statements?")
+st.text("What factors can lead to a Decision to Investigate by the case examiner from the FRC?")
+st.text("In the preparation of financial statements, how do you decide materiality ?")
+st.text("")
+
 filename = False
 query = False
 options = st.radio(
