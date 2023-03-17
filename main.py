@@ -6,6 +6,11 @@ from utils import *
 
 
 st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engine for Audit Documents and Q&A</h1>", unsafe_allow_html=True)
+st.sidebar.header("Documents loaded in search database")
+st.sidebar.text("FRC-2018-UK-Corporate-Governance-Code-FINAL.pdf")
+st.sidebar.text("FRC-What-Makes-a-Good-Audit-_2021.pdf")
+st.sidebar.text("FRC-What-Makes-a-Good-Annual-Report-and-Accounts.pdf")
+st.sidebar.text("FRC-Audit-Enforcement-Procedure_January-2022.pdf")
 
 st.title("Example Questions")
 st.text("Explain the importance of financial controls")
