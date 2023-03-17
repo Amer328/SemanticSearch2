@@ -12,6 +12,8 @@ st.sidebar.text("FRC-What-Makes-a-Good-Audit-_2021.pdf")
 st.sidebar.text("FRC-What-Makes-a-Good-Annual-Report-and-Accounts.pdf")
 st.sidebar.text("FRC-Audit-Enforcement-Procedure_January-2022.pdf")
 st.sidebar.text("FRC-What-Makes-a-Good-Environment-for-Auditor-Scepticism-and-Challenge.pdf")
+st.sidebar.text("FRC-AQTR_AQI_Final_Thematic_Review.pdf")
+
 
 st.title("Example Questions")
 st.text("Explain the importance of financial controls")
