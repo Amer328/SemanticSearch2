@@ -1,5 +1,5 @@
 import os
-import st
+import streamlit as st
 import openai
 
 # Fetch the OpenAI Key from Windows env
