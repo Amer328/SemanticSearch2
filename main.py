@@ -11,6 +11,7 @@ st.sidebar.text("FRC-2018-UK-Corporate-Governance-Code-FINAL.pdf")
 st.sidebar.text("FRC-What-Makes-a-Good-Audit-_2021.pdf")
 st.sidebar.text("FRC-What-Makes-a-Good-Annual-Report-and-Accounts.pdf")
 st.sidebar.text("FRC-Audit-Enforcement-Procedure_January-2022.pdf")
+st.sidebar.text("FRC-What-Makes-a-Good-Environment-for-Auditor-Scepticism-and-Challenge.pdf")
 
 st.title("Example Questions")
 st.text("Explain the importance of financial controls")
