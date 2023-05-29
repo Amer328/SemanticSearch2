@@ -19,7 +19,7 @@ def generate_answer(prompt):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[{"role": "user", "content": prompt}],
-    temperature=1,
+    temperature=0,
     max_tokens=2000,
     top_p=1,
     frequency_penalty=0,
