@@ -10,7 +10,7 @@ st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engin
 
 
 st.title("Example Questions")
-st.text("Does migration influence the conflict in gender-role ideology, quality of parent-child relationship, perceived parental efficacy and psychological health of adolescents?")
+st.text("In what way might migration influence the quality of parent-child relationships in refugee families?")
 st.text("What are the mental health challenges refugees face during the settlement process in the host country?")
 st.text("What are typical family relationship challenges and speculate on their impact on the mental health problems of refugee adolescents?")
 st.text("What demographic variables may influence mental health problems in refugee adolescents?")
