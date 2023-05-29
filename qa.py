@@ -11,7 +11,7 @@ openai.api_key = api_key
 
 
 def create_prompt(context,query):
-    header = "Answer the question with as much detail as possible using the provided context and support your answer with bullet points. If no answer is generated, print 'Sorry insufficient data to answer query' \n"
+    header = "Assume the role of an academic researcher and answer the question with as much detail as possible using the provided context and support your answer with bullet points. If no answer is generated, print 'Sorry insufficient data to answer query' \n"
     return header + context + "\n\n" + query + "\n"
 
 
@@ -19,7 +19,7 @@ def generate_answer(prompt):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[{"role": "user", "content": prompt}],
-    temperature=0,
+    temperature=1,
     max_tokens=2000,
     top_p=1,
     frequency_penalty=0,
