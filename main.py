@@ -10,11 +10,11 @@ st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engin
 
 
 st.title("Example Questions")
-st.text("Explain the importance of financial controls")
-st.text("What ethical requirements are auditors are subject to ?")
-st.text("What are the Auditor's Responsibilities for the Audit of the Financial Statements?")
-st.text("What factors can lead to a Decision to Investigate by the FRC case examiner?")
-st.text("In the preparation of financial statements, how do you decide materiality ?")
+st.text("Does migration influence the conflict in gender-role ideology, quality of parent-child relationship, perceived parental efficacy and psychological health of adolescents?")
+st.text("What are the mental health challenges refugees face during the settlement process in the host country?")
+st.text("What is the association between family cohesion/Parent-Child relationship, emotion regulation, trauma appraisal, PTSD, posttraumatic growth and mental health problems of refugee adolescents?")
+st.text("How key demographic variables moderate mental health problems in refugee adolescents?")
+st.text("How can mental health professionals and other stakeholders work together to improve the process of mental health care?")
 st.text("")
 
 filename = False
