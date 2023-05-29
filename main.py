@@ -5,14 +5,8 @@ import qa
 from utils import *
 
 
-st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engine for Audit Documents and Q&A</h1>", unsafe_allow_html=True)
-st.sidebar.header("Documents loaded in search database")
-st.sidebar.text("FRC-2018-UK-Corporate-Governance-Code-FINAL.pdf")
-st.sidebar.text("FRC-What-Makes-a-Good-Audit-_2021.pdf")
-st.sidebar.text("FRC-What-Makes-a-Good-Annual-Report-and-Accounts.pdf")
-st.sidebar.text("FRC-Audit-Enforcement-Procedure_January-2022.pdf")
-st.sidebar.text("FRC-What-Makes-a-Good-Environment-for-Auditor-Scepticism-and-Challenge.pdf")
-st.sidebar.text("FRC-AQTR_AQI_Final_Thematic_Review.pdf")
+st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engine for Documents and Q&A</h1>", unsafe_allow_html=True)
+
 
 
 st.title("Example Questions")
