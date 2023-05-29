@@ -11,7 +11,7 @@ openai.api_key = api_key
 
 
 def create_prompt(context,query):
-    header = "Assume the role of an academic researcher and answer the question with as much detail as possible using the provided context and support your answer with bullet points. If no answer is generated, print 'Sorry insufficient data to answer query' \n"
+    header = "Answer the question with as much detail as possible using the provided context and support your answer with bullet points. If no answer is generated, print 'Sorry insufficient data to answer query' \n"
     return header + context + "\n\n" + query + "\n"
 
 
