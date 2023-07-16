@@ -41,7 +41,7 @@ if button and (filename or query):
             st.success("Database Updated")
     if 'Ask a question' in options:
         with st.spinner("Searching for the answer..."):
-            source,res = find_match(query,3)
+            source,res = find_match(query,5)
             # Arrange the matching result as source, data, source ,data etc
             result = []
             for i in range(len(source)):
