@@ -15,6 +15,7 @@ st.text("How is trauma appraisal associated with the development and maintenance
 st.text("How do cultural factors influence the appraisal of trauma?")
 st.text("What are the commonalities and differences in trauma appraisal between collectivistic and individualistic cultures?")
 st.text("How does religion and spirituality influence trauma appraisal ?")
+st.text("Outline further research that could explore the influence of specific cultural variables on trauma appraisals.")
 st.text("")
 
 filename = False
