@@ -10,12 +10,13 @@ st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engin
 
 
 st.title("Example Questions")
-st.text("What is trauma appraisal ?")
-st.text("How is trauma appraisal associated with the development and maintenance of PTSD?")
-st.text("How do cultural factors influence the appraisal of trauma?")
-st.text("What are the commonalities and differences in trauma appraisal between collectivistic and individualistic cultures?")
-st.text("How does religion and spirituality influence trauma appraisal ?")
-st.text("Outline further research that could explore the influence of specific cultural variables on trauma appraisals.")
+st.text("What is Trauma?")
+st.text("What are different types of trauma?")
+st.text("What are the common reactions of trauma?")
+st.text("What is the association of trauma and mental health problems?")
+st.text("What are the common predictors of PTSD?")
+st.text("How is family functioning associated with trauma")
+st.text("How is attachment associated with Trauma?")
 st.text("")
 
 filename = False
