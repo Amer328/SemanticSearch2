@@ -15,7 +15,7 @@ st.text("What are the different types of trauma?")
 st.text("What are the common reactions of trauma?")
 st.text("What is the association of trauma and mental health problems?")
 st.text("What are the common predictors of PTSD?")
-st.text("How is family functioning associated with trauma")
+st.text("How is family functioning associated with trauma?")
 st.text("How is attachment associated with Trauma?")
 st.text("")
 
