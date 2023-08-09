@@ -9,7 +9,7 @@ st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engin
 
 
 
-st.title("Example Questions")
+st.title("Example Questions.")
 st.text("What is Trauma?")
 st.text("What are the different types of trauma?")
 st.text("What are the common reactions of trauma?")
