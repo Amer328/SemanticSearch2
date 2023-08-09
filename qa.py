@@ -17,7 +17,7 @@ def create_prompt(context,query):
 
 def generate_answer(prompt):
     response = openai.ChatCompletion.create(
-    model="gpt4",
+    model="gpt-4",
     messages=[{"role": "user", "content": prompt}],
     temperature=0.1,
     max_tokens=8000,
