@@ -9,7 +9,7 @@ st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engin
 
 
 
-st.title("Example Questions")
+st.title("Ask Questions Relating to Data Engineering")
 st.text("")
 
 filename = False
