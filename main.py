@@ -10,13 +10,6 @@ st.markdown("<h1 style='text-align: center; color: white;'>Semantic Search Engin
 
 
 st.title("Example Questions")
-st.text("What is Trauma?")
-st.text("What are the different types of trauma?")
-st.text("What are the common reactions of trauma?")
-st.text("What is the association of trauma and mental health problems?")
-st.text("What are the common predictors of PTSD?")
-st.text("How is family functioning associated with trauma?")
-st.text("How is attachment associated with Trauma?")
 st.text("")
 
 filename = False
