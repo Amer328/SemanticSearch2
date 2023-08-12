@@ -7,7 +7,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2') #384 dimensional
 pinecone_api_key = st.secrets["PINECONE_API"]
 
 pinecone.init(api_key=pinecone_api_key, environment="us-east-1-aws") 
-index = pinecone.Index("research3")
+index = pinecone.Index("generalpurpose1")
 
 
 def addData(corpusData,url):
