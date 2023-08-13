@@ -23,7 +23,7 @@ def generate_answer(prompt):
     engine="DAAGPT35turbo16k",
     messages=[{"role": "user", "content": prompt}],
     temperature=0.1,
-    max_tokens=14000,
+    max_tokens=13000,
     top_p=1,
     frequency_penalty=0,
     presence_penalty=0
