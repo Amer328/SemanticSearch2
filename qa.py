@@ -20,7 +20,7 @@ def create_prompt(context,query):
 
 def generate_answer(prompt):
     response = openai.ChatCompletion.create(
-    engine="DAAGPT35turbo16k",
+    engine="DAAGPT416k",
     messages=[{"role": "user", "content": prompt}],
     temperature=0.1,
     max_tokens=13000,
