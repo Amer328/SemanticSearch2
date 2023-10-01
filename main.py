@@ -49,9 +49,13 @@ if button and (filename or query or reset_index):
                 corpusData = scrape_text_from_pdf(filename)
                 addData(corpusData,filename)
                 st.success("Database Updated")
+            elif file_type == 'pptx':
+                corpusData = scrape_text_from_pptx(filename)
+                addData(corpusData,filename)
+                st.success("Database Updated")
             else:
                 st.success("Unsupported file type")
-   
+            
             
     if 'Ask a question' in options:
         with st.spinner("Searching for the answer..."):
@@ -67,4 +71,4 @@ if button and (filename or query or reset_index):
             prompt = qa.create_prompt(context,query)
             answer = qa.generate_answer(prompt)
             # answer = str(source[0]) + "\n" + answer
-            st.success("Answer: "+answer)       
+            st.success("Answer: "+answer)
