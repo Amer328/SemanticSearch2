@@ -27,7 +27,7 @@ if 'Ask a question' in options:
 button = st.button("Submit")
   
 if button and (filename or query):
-        if 'Delete Database of Documents' in options:
+    if 'Delete Database of Documents' in options:
         with st.spinner("Deleting Database of Documentse..."):
             rebuildIndex()
             st.success("Database Re-created")
