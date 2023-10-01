@@ -16,7 +16,7 @@ filename = False
 query = False
 options = st.radio(
     'Choose task',
-    ('Ask a question','Update the Database of Documents'))
+    ('Ask a question','Update the Database of Documents', 'Delete Database of Documents'))
 
 if 'Update the Database' in options:
     filename = st.text_input("Enter the full path of the PDF document")
