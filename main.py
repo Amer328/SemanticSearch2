@@ -24,9 +24,12 @@ if 'Update the Database' in options:
 if 'Ask a question' in options:
     query = st.text_input("Enter your question")
 
+if 'Delete Database of Documents' in options:
+    reset_index = "True"
+
 button = st.button("Submit")
   
-if button and (filename or query):
+if button and (filename or query or reset_index):
     if 'Delete Database of Documents' in options:
         with st.spinner("Deleting Database of Documentse..."):
             rebuildIndex()
