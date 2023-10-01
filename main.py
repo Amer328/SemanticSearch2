@@ -31,7 +31,7 @@ button = st.button("Submit")
   
 if button and (filename or query or reset_index):
     if 'Delete Database of Documents' in options:
-        with st.spinner("Deleting Database of Documentse..."):
+        with st.spinner("Deleting Database of Documents, this may take a few minutes..."):
             rebuildIndex()
             st.success("Database Re-created")
             
