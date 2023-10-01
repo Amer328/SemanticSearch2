@@ -11,7 +11,7 @@ api_base = st.secrets["OPENAI_API_BASE"]
 openai.api_key = api_key
 openai.api_base = api_base
 openai.api_type = "azure"
-openai.api_version = "2023-03-15-preview"
+openai.api_version = "2023-07-01-preview"
 
 def create_prompt(context,query):
     header = "Answer the question with as much detail as possible using the provided context and support your answer with paragraphs and bullet points. If no answer is generated, print 'Sorry insufficient data to answer query' \n"
