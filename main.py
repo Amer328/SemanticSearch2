@@ -27,6 +27,14 @@ if 'Ask a question' in options:
 button = st.button("Submit")
   
 if button and (filename or query):
+        if 'Delete Database of Documents' in options:
+        with st.spinner("Deleting Database of Documentse..."):
+            # comment out to prevent attempts of local file uploads from web
+            pinecone.delete_index('ai-assist1')
+            pinecone.create_index('ai-assist1', dimension=384,metric='cosine', replicas=1, pod_type='s1.x1')
+            
+            st.success("Database Re-created")
+            
     if 'Update the Database' in options:
         with st.spinner("Updating Database..."):
             corpusData = scrape_text_from_pdf(filename)
