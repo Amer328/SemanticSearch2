@@ -9,7 +9,7 @@ pinecone_api_key = st.secrets["PINECONE_API"]
 pinecone.init(api_key=pinecone_api_key, environment="gcp-starter") 
 index = pinecone.Index("ai-assist1")
 
-def rebuildIndex:
+def rebuildIndex():
     pinecone.delete_index(index)
     pinecone.create_index(index, dimension=384,metric='cosine', replicas=1, pod_type='s1.x1')
 
