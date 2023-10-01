@@ -1,6 +1,7 @@
 
 # from PyPDF2 import PdfReader
 import PyPDF2
+import docx
 
 def get_plain_text(pdf_filename):
     # Open the PDF file in read-binary mode
@@ -41,3 +42,30 @@ def scrape_text_from_pdf(pdf_file, max_chars=2000):
     plain_text = get_plain_text(pdf_file)
     text_chunks = split_text_into_chunks(plain_text, max_chars)
     return text_chunks
+
+def scrape_text_from_docx(docx_file, max_chars=2000):
+    plain_text = get_plain_text_docx(docx_file)
+    text_chunks = split_text_into_chunks(plain_text, max_chars)
+    return text_chunks
+ 
+
+def get_plain_text_docx(docx_filename):
+
+  # Open the Word document
+  document = docx.Document(docx_filename)  
+
+  # Initialize empty string
+  doc_text = ""
+
+  # Loop through paragraphs
+  for para in document.paragraphs:
+    doc_text += para.text + "\n"  
+  
+  # Loop through tables
+  for table in document.tables:
+    for row in table.rows:
+      for cell in row.cells:
+        doc_text += cell.text + "\n"
+
+  # Return the text
+  return doc_text
