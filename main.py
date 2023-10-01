@@ -29,9 +29,7 @@ button = st.button("Submit")
 if button and (filename or query):
         if 'Delete Database of Documents' in options:
         with st.spinner("Deleting Database of Documentse..."):
-            # comment out to prevent attempts of local file uploads from web
             rebuildIndex
-            
             st.success("Database Re-created")
             
     if 'Update the Database' in options:
