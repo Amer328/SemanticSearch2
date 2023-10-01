@@ -2,6 +2,7 @@
 # from PyPDF2 import PdfReader
 import PyPDF2
 import docx
+import pptx
 
 def get_plain_text(pdf_filename):
     # Open the PDF file in read-binary mode
@@ -21,6 +22,49 @@ def get_plain_text(pdf_filename):
             # Append the page text to the document text
             document_text += page_text
         return document_text
+
+def get_plain_text_docx(docx_filename):
+
+  # Open the Word document
+  document = docx.Document(docx_filename)  
+
+  # Initialize empty string
+  doc_text = ""
+
+  # Loop through paragraphs
+  for para in document.paragraphs:
+    doc_text += para.text + "\n"  
+  
+  # Loop through tables
+  for table in document.tables:
+    for row in table.rows:
+      for cell in row.cells:
+        doc_text += cell.text + "\n"
+
+  # Return the text
+  return doc_text
+
+
+
+
+def  get_plain_text_pptx(pptx_filename):
+
+  # Open the PowerPoint presentation
+  presentation = pptx.Presentation(pptx_filename)
+
+  # Initialize empty string 
+  text = ""
+
+  # Loop through slides 
+  for slide in presentation.slides:
+
+    # Extract text from each paragraph of the slide
+    for shape in slide.shapes:
+      if hasattr(shape, "text"):
+        text += shape.text + "\n"
+
+  # Return the text
+  return text  
 
 
 def split_text_into_chunks(plain_text, max_chars=2000):
@@ -47,25 +91,9 @@ def scrape_text_from_docx(docx_file, max_chars=2000):
     plain_text = get_plain_text_docx(docx_file)
     text_chunks = split_text_into_chunks(plain_text, max_chars)
     return text_chunks
+
+def scrape_text_from_pptx(pptx_file, max_chars=2000):
+    plain_text = get_plain_text_pptx(pptx_file)
+    text_chunks = split_text_into_chunks(plain_text, max_chars)
+    return text_chunks
  
-
-def get_plain_text_docx(docx_filename):
-
-  # Open the Word document
-  document = docx.Document(docx_filename)  
-
-  # Initialize empty string
-  doc_text = ""
-
-  # Loop through paragraphs
-  for para in document.paragraphs:
-    doc_text += para.text + "\n"  
-  
-  # Loop through tables
-  for table in document.tables:
-    for row in table.rows:
-      for cell in row.cells:
-        doc_text += cell.text + "\n"
-
-  # Return the text
-  return doc_text
