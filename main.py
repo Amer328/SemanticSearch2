@@ -37,11 +37,22 @@ if button and (filename or query or reset_index):
             
     if 'Update the Database' in options:
         with st.spinner("Updating Database..."):
-            corpusData = scrape_text_from_pdf(filename)
-            # comment out to prevent attempts of local file uploads from web
-            addData(corpusData,filename)
+
+            # Split on last '.' 
+            name, file_type = filename.rsplit('.', 1)
+
+            if file_type == 'docx':
+                corpusData = scrape_text_from_docx(filename)
+                addData(corpusData,filename)
+                st.success("Database Updated")
+            elif file_type == 'pdf':
+                corpusData = scrape_text_from_pdf(filename)
+                addData(corpusData,filename)
+                st.success("Database Updated")
+            else:
+                st.success("Unsupported file type")
+   
             
-            st.success("Database Updated")
     if 'Ask a question' in options:
         with st.spinner("Searching for the answer..."):
             source,res = find_match(query,6)
@@ -56,10 +67,4 @@ if button and (filename or query or reset_index):
             prompt = qa.create_prompt(context,query)
             answer = qa.generate_answer(prompt)
             # answer = str(source[0]) + "\n" + answer
-            st.success("Answer: "+answer)
-
-            
-            
-
-
-       
+            st.success("Answer: "+answer)       
