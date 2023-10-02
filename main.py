@@ -53,6 +53,10 @@ if button and (filename or query or reset_index):
                 corpusData = scrape_text_from_pptx(filename)
                 addData(corpusData,filename)
                 st.success("Database Updated")
+            elif file_type == 'csv':
+                corpusData = scrape_text_from_csv(filename)
+                addData(corpusData,filename)
+                st.success("Database Updated")
             else:
                 st.success("Unsupported file type")
             
