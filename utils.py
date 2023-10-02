@@ -3,6 +3,7 @@
 import PyPDF2
 import docx
 import pptx
+import csv
 
 def get_plain_text(pdf_filename):
     # Open the PDF file in read-binary mode
@@ -67,6 +68,31 @@ def  get_plain_text_pptx(pptx_filename):
   return text  
 
 
+
+def get_plain_text_csv(csv_filename):
+
+  # Open CSV file
+  with open(csv_filename, 'r') as f:
+
+    # Create CSV reader
+    reader = csv.reader(f)
+
+    # Skip header row
+    next(reader)  
+
+    # Initialize empty string 
+    csv_text = ""
+
+    # Loop through rows
+    for row in reader:
+    
+      # Append row values 
+      csv_text += " ".join(row) + "\n"
+
+  # Return text
+  return csv_text
+
+
 def split_text_into_chunks(plain_text, max_chars=2000):
     text_chunks = []
     current_chunk = ""
@@ -94,6 +120,11 @@ def scrape_text_from_docx(docx_file, max_chars=2000):
 
 def scrape_text_from_pptx(pptx_file, max_chars=2000):
     plain_text = get_plain_text_pptx(pptx_file)
+    text_chunks = split_text_into_chunks(plain_text, max_chars)
+    return text_chunks
+
+def scrape_text_from_csv(csv_file, max_chars=2000):
+    plain_text = get_plain_text_csv(csv_file)
     text_chunks = split_text_into_chunks(plain_text, max_chars)
     return text_chunks
  
