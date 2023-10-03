@@ -16,11 +16,15 @@ def rebuildIndex():
 
 def addData(corpusData,url):
     id  = index.describe_index_stats()['total_vector_count']
+    # strip out the path leading up to the filename
+    last_slash_idx = url.rfind('\\')
+    filename = url[last_slash_idx+1:] 
+    
     for i in range(len(corpusData)):
         chunk=corpusData[i]
         chunkInfo=(str(id+i),
                 model.encode(chunk).tolist(),
-                {'title': url,'context': chunk})
+                {'title': filename,'context': chunk})
         index.upsert(vectors=[chunkInfo])
 
 
