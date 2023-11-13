@@ -141,7 +141,7 @@ def get_plain_text_image(image_file):
             ],
         }
     ],
-    max_tokens=300,
+    max_tokens=2000,
     )
     return response.choices[0].message.content
 
