@@ -4,6 +4,8 @@ import PyPDF2
 import docx
 import pptx
 import csv
+from openai import OpenAI
+import base64
 
 def get_plain_text(pdf_filename):
     # Open the PDF file in read-binary mode
@@ -107,6 +109,39 @@ def split_text_into_chunks(plain_text, max_chars=2000):
     return text_chunks
 
 
+# Function to encode the image
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+def get_plain_text_image(image_file):
+    client = OpenAI()
+
+    # Path to your image
+    image_path = image_file   #"c:/temp/data-model-01.png"
+
+    # Getting the base64 string
+    base64_image = encode_image(image_path)
+
+    response = client.chat.completions.create(
+    model="gpt-4-vision-preview",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "What’s in this image?"},
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/png;base64,{base64_image}",
+                    },
+                },
+            ],
+        }
+    ],
+    max_tokens=300,
+    )
+    return response.choices[0].message.content
 
 def scrape_text_from_pdf(pdf_file, max_chars=2000):
     plain_text = get_plain_text(pdf_file)
@@ -128,3 +163,7 @@ def scrape_text_from_csv(csv_file, max_chars=2000):
     text_chunks = split_text_into_chunks(plain_text, max_chars)
     return text_chunks
  
+def scrape_text_from_image(image_file, max_chars=2000):
+    plain_text = get_plain_text_image(image_file)
+    text_chunks = split_text_into_chunks(plain_text, max_chars)
+    return text_chunks
