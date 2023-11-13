@@ -27,8 +27,8 @@ def create_prompt(context,query):
 def generate_answer(prompt):
 
     response = client.chat.completions.create(
-    #model="DAAGPT416k",
-    model ="DAAGPT35turbo16k",
+    model="DAAGPT416k",
+    #model ="DAAGPT35turbo16k",
     messages=[{"role": "user", "content": prompt}],
     temperature=0.1,
     max_tokens=13000,
