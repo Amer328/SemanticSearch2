@@ -1,7 +1,8 @@
 openai==1.2.0
-pinecone_client==2.2.1
+pinecone-client==2.2.4
 PyPDF2==3.0.1
 sentence_transformers==2.2.2
-streamlit==1.20.0
-python-docx==0.8.11
-python-pptx==0.6.22
+streamlit==1.28.1
+cohere==4.27
+python-docx==1.1.0
+python-pptx==0.6.23
