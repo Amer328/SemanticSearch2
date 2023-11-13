@@ -4,14 +4,20 @@ import openai
 
 # Fetch the OpenAI Key from Windows env
 # api_key = os.environ["OPENAI_API_KEY"]
-api_key = st.secrets["OPENAI_API"]
-api_base = st.secrets["OPENAI_API_BASE"]
+# api_key = st.secrets["OPENAI_API"]
+# api_base = st.secrets["OPENAI_API_BASE"]
 
 # Set the OpenAI key
-openai.api_key = api_key
-openai.api_base = api_base
-openai.api_type = "azure"
-openai.api_version = "2023-07-01-preview"
+
+
+from openai import AzureOpenAI
+
+client = AzureOpenAI(
+  azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+  api_key=os.getenv("AZURE_OPENAI_KEY"),  
+  api_version="2023-05-15"
+)
+
 
 def create_prompt(context,query):
     header = "Answer the question with as much detail as possible using the provided context and support your answer with paragraphs and bullet points. If no answer is generated, print 'Sorry insufficient data to answer query' \n"
@@ -19,15 +25,17 @@ def create_prompt(context,query):
 
 
 def generate_answer(prompt):
-    response = openai.ChatCompletion.create(
-    #engine="DAAGPT416k",
-    engine="DAAGPT35turbo16k",
+
+    response = client.chat.completions.create(
+    #model="DAAGPT416k",
+    model ="DAAGPT35turbo16k",
     messages=[{"role": "user", "content": prompt}],
     temperature=0.1,
-    max_tokens=12500,
+    max_tokens=13000,
     top_p=1,
     frequency_penalty=0,
     presence_penalty=0
     )
 
     return(response.choices[0].message.content)
+
