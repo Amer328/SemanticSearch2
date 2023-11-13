@@ -6,6 +6,7 @@ import pptx
 import csv
 from openai import OpenAI
 import base64
+import os
 
 def get_plain_text(pdf_filename):
     # Open the PDF file in read-binary mode
@@ -80,7 +81,7 @@ def get_plain_text_csv(csv_filename):
     reader = csv.reader(f)
 
     # Skip header row
-    # next(reader)  
+    #next(reader)  
 
     # Initialize empty string 
     csv_text = ""
@@ -115,6 +116,7 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 def get_plain_text_image(image_file):
+    api_key = os.environ["OPENAI_API_KEY"]
     client = OpenAI()
 
     # Path to your image
