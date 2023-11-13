@@ -131,7 +131,7 @@ def get_plain_text_image(image_file):
         {
             "role": "user",
             "content": [
-                {"type": "text", "text": "What’s in this image, look at text as well as images, capture in as much detail as possible?"},
+                {"type": "text", "text": "What’s in this image, look at text as well as images, capture in as much detail as possible? If the image is a data model, extract out all primary/foreign key relationships."},
                 {
                     "type": "image_url",
                     "image_url": {
