@@ -39,6 +39,10 @@ with st.sidebar:
                 corpusData = scrape_text_from_docx(filename)
                 addData(corpusData,filename)
                 st.success("Database Updated With docx")
+            elif file_type == 'txt':
+                corpusData = scrape_text_from_txt(filename)
+                addData(corpusData,filename)
+                st.success("Database Updated With txt")
             elif file_type == 'pdf':
                 corpusData = scrape_text_from_pdf(filename)
                 addData(corpusData,filename)
